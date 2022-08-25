@@ -87,6 +87,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("StringFormatInvalid")
     @UiThread
     private fun setPokemonName(info: PokemonName) {
+        binding.pokemonName.text = getString(R.string.pokemon_name, info.name)
         Picasso.get().load(ICON_URL.format(info.id))
             .into(binding.pokemonIcon)
     }
